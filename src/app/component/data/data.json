@@ -1,0 +1,26 @@
+[
+    {
+      "id": 1,
+      "name": "Basketball",
+      "image": "https://images.pexels.com/photos/1752757/pexels-photo-1752757.jpeg",
+      "type_of_sport": "Team"
+    },
+    {
+      "id": 2,
+      "name": "Tennis",
+      "image": "https://images.pexels.com/photos/5740529/pexels-photo-5740529.jpeg",
+      "type_of_sport": "Individual"
+    },
+    {
+      "id": 3,
+      "name": "Football",
+      "image": "https://images.pexels.com/photos/918798/pexels-photo-918798.jpeg",
+      "type_of_sport": "Team"
+    },
+    {
+      "id": 4,
+      "name": "Swimming",
+      "image": "https://images.pexels.com/photos/260598/pexels-photo-260598.jpeg",
+      "type_of_sport": "Individual"
+    }
+  ]
