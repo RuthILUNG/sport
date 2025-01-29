@@ -1,8 +1,12 @@
 {
+  "homepage": "https://RuthILUNG.github.io/sport",
+
   "name": "sport_app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
@@ -21,6 +25,7 @@
     "autoprefixer": "^10.4.20",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.5.1",
     "tailwindcss": "^3.4.17",
     "typescript": "^5"

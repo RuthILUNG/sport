@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import { Sport } from "./types";
-import sportsData from "./component/data/data.json";
-import SportsList from "./component/sport_det";
-import SportForm from "./component/sport_f";
+import sportsData from "./Component/data/data.json";
+import SportsList from "./Component/sport_det";
+import SportForm from "./Component/sport_f";
 
 const App: React.FC = () => {
   const [sports, setSports] = useState<Sport[]>([]);
