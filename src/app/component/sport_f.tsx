@@ -4,7 +4,7 @@ import { Sport } from "../types";
 interface SportFormProps {
   onAddSport: (sport: Sport) => void;
   onCancel?: () => void;
-  sport?: Sport; // This is optional when editing
+  sport?: Sport; 
 }
 
 const SportForm: React.FC<SportFormProps> = ({ onAddSport, onCancel, sport }) => {
@@ -24,13 +24,13 @@ const SportForm: React.FC<SportFormProps> = ({ onAddSport, onCancel, sport }) =>
     e.preventDefault();
 
     const newSport = {
-      id: sport ? sport.id : Date.now(), // If editing, keep the same id, otherwise generate a new one
+      id: sport ? sport.id : Date.now(), 
       name,
       image,
-      type_of_sport: sportType, // Correct field name
+      type_of_sport: sportType, 
     };
 
-    onAddSport(newSport); // Add or update sport
+    onAddSport(newSport); 
   };
 
   return (
@@ -93,7 +93,7 @@ const SportForm: React.FC<SportFormProps> = ({ onAddSport, onCancel, sport }) =>
             )}
             <button
               type="submit"
-              className="px-4 py-2 bg-blue-500 text-white rounded-md"
+              className="px-4 py-2 bg-green-500 text-white rounded-md"
             >
               {sport ? "Update Sport" : "Add Sport"}
             </button>

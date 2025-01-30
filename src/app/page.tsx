@@ -9,8 +9,8 @@ import SportForm from "../app/component/sport_f";
 const App: React.FC = () => {
   const [sports, setSports] = useState<Sport[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [showForm, setShowForm] = useState<boolean>(false); // Controls form visibility
-  const [editSport, setEditSport] = useState<Sport | null>(null); // Store sport being edited
+  const [showForm, setShowForm] = useState<boolean>(false); 
+  const [editSport, setEditSport] = useState<Sport | null>(null); 
 
   useEffect(() => {
     setSports(sportsData);
@@ -18,7 +18,7 @@ const App: React.FC = () => {
 
   const handleAddSport = (newSport: Sport) => {
     setSports([...sports, newSport]);
-    setShowForm(false); // Hide form after adding
+    setShowForm(false); 
   };
 
   const handleDeleteSport = (id: number) => {
@@ -29,7 +29,7 @@ const App: React.FC = () => {
     setSports(
       sports.map((sport) => (sport.id === updatedSport.id ? updatedSport : sport))
     );
-    setEditSport(null); // Close modal after updating
+    setEditSport(null); 
   };
 
   const filteredSports = sports.filter((sport) =>
@@ -38,13 +38,42 @@ const App: React.FC = () => {
 
   const openEditForm = (sport: Sport) => {
     setEditSport(sport);
-    setShowForm(true); // Show form when editing
+    setShowForm(true); 
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <div className="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6">
-        <h1 className="text-3xl font-bold text-center text-blue-600 mb-6">Sports Dashboard</h1>
+    <div
+      style={{
+        minHeight: "100vh",
+        backgroundImage: "url('https://www.stormers.co.za/wp-content/uploads/2025/01/Screenshot-2025-01-25-210146.png')",  
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment:"fixed",
+        padding: "1.5rem",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: "40rem",
+          margin: "0 auto",
+          backgroundColor: "rgba(255, 255, 255, 0.8)",  
+          borderRadius: "0.5rem",
+          padding: "1.5rem",
+          boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+        }}
+      >
+        <h1
+          style={{
+            fontSize: "2rem",
+            fontWeight: "bold",
+            textAlign: "center",
+            color: "#008000",
+            marginBottom: "1.5rem",
+          }}
+        >
+          Sports Dashboard
+        </h1>
 
         {/* Search Input */}
         <input
@@ -52,34 +81,55 @@ const App: React.FC = () => {
           placeholder="Search sports..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          style={{
+            width: "100%",
+            padding: "0.5rem",
+            border: "1px solid #D1D5DB",
+            borderRadius: "0.375rem",
+            outline: "none",
+            boxSizing: "border-box",
+            marginBottom: "1rem",
+            transition: "border-color 0.2s",
+          }}
+          onFocus={(e) => (e.target.style.borderColor = "#2563EB")}
+          onBlur={(e) => (e.target.style.borderColor = "#D1D5DB")}
         />
 
-        {/* Toggle Add Sport Form */}
+        
         <button
           onClick={() => setShowForm(!showForm)}
-          className="w-full mt-4 p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+          style={{
+            width: "100%",
+            padding: "0.75rem",
+            backgroundColor: "#008000",
+            color: "#FFF",
+            borderRadius: "0.375rem",
+            fontWeight: "600",
+            cursor: "pointer",
+            transition: "background-color 0.3s",
+            marginBottom: "1.5rem",
+          }}
         >
           {showForm ? "Cancel" : "Add Sport"}
         </button>
 
-        {/* Conditionally Render Add Sport Form */}
+        
         {showForm && !editSport && <SportForm onAddSport={handleAddSport} />}
 
-        {/* Conditionally Render Edit Form */}
+        
         {showForm && editSport && (
           <SportForm
-            sport={editSport} // Pass the selected sport to the form for editing
-            onAddSport={handleUpdateSport} // Use the update function for editing
-            onCancel={() => setShowForm(false)} // Close the form when canceled
+            sport={editSport} 
+            onAddSport={handleUpdateSport} 
+            onCancel={() => setShowForm(false)} 
           />
         )}
 
-        {/* Sports List */}
+       
         <SportsList
           sports={filteredSports} // Pass sports to SportsList
           onDeleteSport={handleDeleteSport}
-          onEditSport={openEditForm} // Pass function to handle editing
+          onEditSport={openEditForm} // Pass the function to handle editing
         />
       </div>
     </div>

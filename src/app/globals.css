@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 
+
 .container {
   max-width: 600px;
   margin: 0 auto;
@@ -17,7 +18,24 @@
 }
 
 .sport-card img {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
+}
+
+.body {
+  background-image: url('https://www.stormers.co.za/wp-content/uploads/2025/01/Screenshot-2025-01-25-210146.png');
+  background-size: cover;  
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  
+  height: 100vh;  
+  margin: 0; 
+}
+
+.main-content {
+  background-color: rgba(255, 255, 255, 0.7); 
+  padding: 20px;
+  border-radius: 8px;
 }

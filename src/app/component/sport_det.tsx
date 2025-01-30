@@ -13,11 +13,11 @@ const SportsList: React.FC<SportsListProps> = ({ sports, onDeleteSport, onEditSp
       {sports.map((sport) => (
         <div key={sport.id} className="flex justify-between items-center p-4 bg-gray-50 rounded-md shadow-sm">
           <div className="flex items-center">
-            {/* Display the image */}
+         
             <img
               src={sport.image}
               alt={sport.name}
-              className="w-16 h-16 object-cover rounded-full mr-4" // Adjust the size as needed
+              className="w-20 h-20 object-cover rounded-full mr-4" 
             />
             <div>
               <h3 className="text-lg font-bold">{sport.name}</h3>
@@ -26,8 +26,8 @@ const SportsList: React.FC<SportsListProps> = ({ sports, onDeleteSport, onEditSp
           </div>
           <div>
             <button
-              onClick={() => onEditSport(sport)} // Pass sport to edit
-              className="mr-2 text-blue-500 hover:text-blue-700"
+              onClick={() => onEditSport(sport)} 
+              className="mr-2 text-green-500 hover:text-green-700"
             >
               Edit
             </button>
